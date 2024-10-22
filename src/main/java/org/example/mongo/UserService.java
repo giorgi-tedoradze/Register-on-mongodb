@@ -20,8 +20,9 @@ public class UserService {
         mongoDBService.setDocument(userDocument);
     }
 
+
     public ExistedUser findByUserName(String userName) throws Exception {
-        Document username = mongoDBService.findDocument("username", userName);
+        Document username = mongoDBService.findDocument("name", userName);
 
         if(username == null) {
             throw new Exception("User not found");
